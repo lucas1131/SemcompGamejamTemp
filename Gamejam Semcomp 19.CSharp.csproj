@@ -63,18 +63,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Dev\Scripts\Bat.cs" />
-    <Compile Include="Assets\Dev\Scripts\Claw.cs" />
-    <Compile Include="Assets\Dev\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Dev\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Dev\Scripts\Player.cs" />
-    <Compile Include="Assets\Dev\Scripts\RealityController.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\BulletScriptable.cs" />
-    <Compile Include="Assets\Scripts\Projectile.cs" />
-    <Compile Include="Assets\Scripts\Weapon.cs" />
-    <Compile Include="Assets\Scripts\WeaponGenericScriptable.cs" />
-    <Compile Include="Assets\Scripts\WeaponScriptable.cs" />
+    <Compile Include="Assets\Dev\Scripts\Enemy\Claw.cs" />
+    <Compile Include="Assets\Dev\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Dev\Scripts\Game Controller\BackgroundController.cs" />
+    <Compile Include="Assets\Dev\Scripts\Game Controller\GameManager.cs" />
+    <Compile Include="Assets\Dev\Scripts\Game Controller\ManageBars.cs" />
+    <Compile Include="Assets\Dev\Scripts\Game Controller\RealityController.cs" />
+    <Compile Include="Assets\Dev\Scripts\Player\Bat.cs" />
+    <Compile Include="Assets\Dev\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Dev\Scripts\Projectiles\Bullet.cs" />
+    <Compile Include="Assets\Dev\Scripts\Projectiles\BulletScriptable.cs" />
+    <Compile Include="Assets\Dev\Scripts\Projectiles\Projectile.cs" />
+    <Compile Include="Assets\Dev\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Dev\Scripts\Weapons\WeaponGenericScriptable.cs" />
+    <Compile Include="Assets\Dev\Scripts\Weapons\WeaponScriptable.cs" />
+    <Compile Include="Assets\Scripts\BloodSpill_Scripts\BloodSpill.cs" />
+    <Compile Include="Assets\Scripts\BloodSpill_Scripts\BloodSpiller.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
