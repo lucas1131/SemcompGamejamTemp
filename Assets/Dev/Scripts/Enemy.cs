@@ -6,29 +6,17 @@ public class Enemy : MonoBehaviour
     Animator anim;
     public Animator clawAnim;
 
+    public GameObject manager;
     public GameObject target;
     Rigidbody2D rigid;
     public float hitpoints;
     public float speed;
-
-    public Sprite cuteSprite;
-    public Sprite normalSprite;
-    public SpriteRenderer sr;
 
     bool attacking;
 
     // Use this for initialization
     void Start()
     {
-        // Spawna inimigos com os sprites certos
-        this.sr = GetComponent<SpriteRenderer>();
-        if (RealityController.cuteReality)
-            this.sr.sprite = cuteSprite;
-        else
-            this.sr.sprite = normalSprite;
-
-        // Inicializa
-        hitpoints = 100;
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -42,11 +30,11 @@ public class Enemy : MonoBehaviour
         LookAtPlayer(deltaX, deltaY);
     }
 
-    public void TakeDamage(float damage)
+    void UpdateHitpoints(float damage)
     {
         if(hitpoints <= 0)
         {
-            // Play death sound
+            manager.GetComponent<GameManager>().enemyCounter--;
             Destroy(gameObject);
         }
         else
@@ -89,16 +77,8 @@ public class Enemy : MonoBehaviour
     {
         if(other.tag == "Bat")
         {
-            TakeDamage(other.GetComponent<Bat>().damage);
+            UpdateHitpoints(other.GetComponent<Bat>().damage);
         }
     }
-
-    public void ChangeSprite()
-    {
-        if (RealityController.cuteReality)
-            this.sr.sprite = this.cuteSprite;
-        else
-            this.sr.sprite = this.normalSprite;
-    }
-
+    
 }
